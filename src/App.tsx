@@ -5,9 +5,19 @@ const messages = ['Learn React ⚛️', 'Apply for jobs 💼', 'Invest your new 
 export default function App() {
 	const [step, setStep] = useState(1);
 
+	const handleNext = () => {
+		if (step === messages.length) return;
+		setStep(step + 1);
+	};
+
+	const handlePrev = () => {
+		if (step === 1) return;
+		setStep(step - 1);
+	};
+
 	return (
 		<main className='flex items-center justify-center h-screen'>
-			<div className='px-6 py-24 rounded-lg w-xl bg-slate-200'>
+			<div className='p-20 rounded-lg w-xl bg-slate-200'>
 				<div className='flex justify-between'>
 					<div
 						className={`${
@@ -37,12 +47,14 @@ export default function App() {
 				<div className='flex justify-between'>
 					<button
 						type='button'
+						onClick={handlePrev}
 						className='flex items-center gap-2 px-4 py-2 text-sm font-bold text-white bg-indigo-400 cursor-pointer rounded-4xl'
 					>
 						Prev
 					</button>
 					<button
 						type='button'
+						onClick={handleNext}
 						className='flex items-center gap-2 px-4 py-2 text-sm font-bold text-white bg-indigo-400 cursor-pointer rounded-4xl'
 					>
 						Next
