@@ -13,3 +13,8 @@ body {
 p {
 	font-family: 'Russo One', sans-serif;
 }
+
+.active {
+	background-color: #7c86ff;
+	color: #fff;
+}
